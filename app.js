@@ -31,9 +31,10 @@ app.use('/sparkling/users',userRouter);
 app.use('/sparkling/messages', messageRouter);
 
 
-const DB_CONN = process.env.NODE_ENV === "production"
-    ? process.env.DATABASE_PRODUCTION.replace("<PWD>",process.env.DATABASE_PASSWORD)
-    : process.env.DATABASE;
+// const DB_CONN = process.env.NODE_ENV === "production"
+//     ? process.env.DATABASE_PRODUCTION.replace("<PWD>",process.env.DATABASE_PASSWORD)
+//     : process.env.DATABASE;
+const DB_CONN = process.env.DATABASE;
 
 mongoose.connect(DB_CONN).then((conn) => {
   console.log("Successfully connected to Sparkling's database");
