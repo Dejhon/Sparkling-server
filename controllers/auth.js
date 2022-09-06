@@ -28,5 +28,10 @@ exports.login = async (req, res) =>{
         }, (error) => {
             res.json({status: 'error' , data : error})
         })
+    }else{
+        res.status(404).json({
+            Status:'User not Found',
+            Message:"Fields cannot be empty"
+        })
     }
 }
