@@ -7,7 +7,7 @@ exports.getAssessment =  async  (req, res) =>{
     const allAssessments = await Assessment.find();
     res.status(200).json(allAssessments)
   }catch(err){
-    res.status(404).json({
+    res.status(400).json({
       status:"Fail",
       message: err
   });
@@ -28,7 +28,7 @@ exports.addAssessment = async(req, res) =>{
       }
     });
   }catch(err){
-       res.status(404).json({
+       res.status(400).json({
         status:"Fail",
         message: err
     });

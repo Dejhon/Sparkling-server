@@ -28,7 +28,7 @@ exports.addService = async(req, res) =>{
       }
     });
   }catch(err){
-       res.status(404).json({
+       res.status(400).json({
         status:"Fail",
         message: err
     });
